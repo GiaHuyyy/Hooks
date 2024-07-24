@@ -75,14 +75,11 @@ function UseState() {
 
     // ------------------------------Todo list------------------------------
 
-    const [list, setList] = useState(
-        JSON.parse(() => {
-            const storageList = JSON.parse(localStorage.getItem("list"));
-
-            return storageList ?? [];
-        })
-    );
     const [value, setValue] = useState("");
+    const [list, setList] = useState(() => {
+        const storageList = JSON.parse(localStorage.getItem("list"));
+        return storageList || [];
+    });
 
     const handlerList = () => {
         setList((prev) => {
