@@ -5,11 +5,11 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 // Hooks
-// import UseState from "./hooks/UseState";
+import UseState from "./hooks/UseState";
 import UseEffect from "./hooks/UseEffect";
-// import UseReducer from './hooks/UseReducer';
 // import UseLayoutEffect from './hooks/UseLayoutEffect';
-// import UseRef from './hooks/UseRef';
+import UseRef from "./hooks/UseRef";
+// import UseReducer from './hooks/UseReducer';
 // import UseImperativeHandle from './hooks/UseImperativeHandle';
 // import UseDebugValue from './hooks/UseDebugValue';
 // import UseTransition from './hooks/UseTransition';
@@ -38,10 +38,10 @@ root.render(
     <React.StrictMode>
         {/* <App /> */}
         {/* {<UseState />} */}
-        {<UseEffect />}
-        {/* <UseReducer /> */}
+        {/* {<UseEffect />} */}
         {/* <UseLayoutEffect /> */}
-        {/* <UseRef /> */}
+        <UseRef />
+        {/* <UseReducer /> */}
         {/* <UseImperativeHandle /> */}
         {/* <UseDebugValue /> */}
         {/* <UseTransition /> */}
