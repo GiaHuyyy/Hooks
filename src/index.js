@@ -5,8 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 // Hooks
-import UseState from "./hooks/UseState";
-// import UseEffect from "./hooks/UseEffect";
+// import UseState from "./hooks/UseState";
+import UseEffect from "./hooks/UseEffect";
 // import UseReducer from './hooks/UseReducer';
 // import UseLayoutEffect from './hooks/UseLayoutEffect';
 // import UseRef from './hooks/UseRef';
@@ -18,12 +18,27 @@ import UseState from "./hooks/UseState";
 // import UseSyncExternalStore from './hooks/UseSyncExternalStore';
 // import UseEvent from './hooks/UseEvent';
 
+// Fake comments
+function emitComment(id) {
+    setInterval(() => {
+        window.dispatchEvent(
+            new CustomEvent(`lessson-${id}`, {
+                detail: `Nội dung comment của lesson ${id}`,
+            })
+        );
+    }, 2000);
+}
+
+emitComment(1);
+emitComment(2);
+emitComment(3);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
         {/* <App /> */}
-        {<UseState />}
-        {/* {<UseEffect />} */}
+        {/* {<UseState />} */}
+        {<UseEffect />}
         {/* <UseReducer /> */}
         {/* <UseLayoutEffect /> */}
         {/* <UseRef /> */}
