@@ -81,6 +81,7 @@ function UseState() {
         return storageList || [];
     });
 
+    // Add
     const handlerList = () => {
         setList((prev) => {
             const newList = [...prev, value];
@@ -93,6 +94,21 @@ function UseState() {
         });
         setValue("");
     };
+
+    // Delete
+    const handleDelete = (index) => {
+        setList((prev) => {
+            const newList = [...prev];
+            newList.splice(index, 1);
+
+            // Save local storage
+            const jsonList = JSON.stringify(newList);
+            localStorage.setItem("list", jsonList);
+
+            return newList;
+        });
+    };
+
     return (
         <div
             className="container"
@@ -150,7 +166,15 @@ function UseState() {
             <button onClick={handlerList}>Add</button>
             <ul>
                 {list.map((item, index) => (
-                    <li key={index}>{item}</li>
+                    <li key={index}>
+                        {item}
+                        <span
+                            onClick={() => handleDelete(index)}
+                            style={{ cursor: "pointer" }}
+                        >
+                            &times;
+                        </span>
+                    </li>
                 ))}
             </ul>
         </div>

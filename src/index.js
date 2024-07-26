@@ -11,8 +11,8 @@ import UseEffect from "./hooks/UseEffect";
 import UseRef from "./hooks/UseRef";
 import UseCallback from "./hooks/UseCallBack";
 import UseMeMo from "./hooks/UseMemo";
+import UseReducer from "./hooks/UseReducer";
 
-// import UseReducer from './hooks/UseReducer';
 // import UseImperativeHandle from './hooks/UseImperativeHandle';
 // import UseDebugValue from './hooks/UseDebugValue';
 // import UseTransition from './hooks/UseTransition';
@@ -45,8 +45,8 @@ root.render(
         {/* <UseLayoutEffect /> */}
         {/* <UseRef /> */}
         {/* {<UseCallback />} */}
-        {<UseMeMo />}
-        {/* <UseReducer /> */}
+        {/* {<UseMeMo />} */}
+        <UseReducer />
         {/* <UseImperativeHandle /> */}
         {/* <UseDebugValue /> */}
         {/* <UseTransition /> */}
