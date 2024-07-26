@@ -5,6 +5,7 @@ import { useReducer, useRef } from "react";
 // 3. Reducer           |
 // 4. Dispatch          |
 
+import Logger from "./Logger";
 // Counter
 const INITIAL_STATE = 0;
 
@@ -52,46 +53,36 @@ const deleteJob = (index) => {
     };
 };
 function reducerJob(state, action) {
-    console.log("Action:", action);
-    console.log("Prev state", state);
-
-    let newState;
     switch (action.type) {
         case SET_JOB:
-            newState = {
+            return {
                 ...state,
                 job: action.payload,
             };
-            break;
         case ADD_JOB:
-            newState = {
+            return {
                 ...state,
                 jobs: [...state.jobs, action.payload],
             };
-            break;
         case DELETE_JOB:
             const newJobs = [...state.jobs];
 
             newJobs.splice(action.index, 1);
 
-            newState = {
+            return {
                 ...state,
                 jobs: newJobs,
             };
-            break;
         default:
             throw new Error("Invalid action");
     }
-    console.log("New state", newState);
-
-    return newState;
 }
 
 function UseReducer() {
     const [count, dispatch] = useReducer(reducer, INITIAL_STATE);
     //
 
-    const [state, dispatchJob] = useReducer(reducerJob, INITIAL_STATE_TODOS);
+    const [state, dispatchJob] = useReducer(Logger(reducerJob), INITIAL_STATE_TODOS);
     const { job, jobs } = state;
     const refElement = useRef();
 
