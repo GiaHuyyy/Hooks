@@ -82,7 +82,10 @@ function UseReducer() {
     const [count, dispatch] = useReducer(reducer, INITIAL_STATE);
     //
 
-    const [state, dispatchJob] = useReducer(Logger(reducerJob), INITIAL_STATE_TODOS);
+    const [state, dispatchJob] = useReducer(
+        Logger(reducerJob),
+        INITIAL_STATE_TODOS
+    );
     const { job, jobs } = state;
     const refElement = useRef();
 
