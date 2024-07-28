@@ -10,8 +10,8 @@ import UseCallback from "./hooks/UseCallBack";
 import UseMeMo from "./hooks/UseMemo";
 import UseReducer from "./hooks/UseReducer";
 import UseContextt from "./hooks/UseContext";
+import UseImperativeHandle from "./hooks/UseImperativeHandle";
 
-// import UseImperativeHandle from './hooks/UseImperativeHandle';
 // import UseDebugValue from './hooks/UseDebugValue';
 // import UseTransition from './hooks/UseTransition';
 // import UseDeferredValue from './hooks/UseDeferredValue';
@@ -48,9 +48,10 @@ function App() {
             {/* {<UseMeMo />} */}
             {/* <UseReducer /> */}
             {/* <UseContextt /> */}
-            {<StoreApp />}
 
-            {/* <UseImperativeHandle /> */}
+            {/* {<StoreApp />} */}
+
+            <UseImperativeHandle />
             {/* <UseDebugValue /> */}
             {/* <UseTransition /> */}
             {/* <UseDeferredValue /> */}
