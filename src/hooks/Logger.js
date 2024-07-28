@@ -1,11 +1,11 @@
-function Logger(reducerJob) {
+function Logger(reducer) {
     return (prevState, action) => {
         console.group(action.type);
 
         console.log("Prev state", prevState);
         console.log("Action", action);
 
-        const newState = reducerJob(prevState, action);
+        const newState = reducer(prevState, action);
 
         console.log("Next state", newState);
 

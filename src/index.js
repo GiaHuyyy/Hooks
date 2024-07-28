@@ -3,14 +3,20 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+// ThemeProvider
 import { ThemeProvider } from "./hooks/ThemeContext";
+
+// Provider
+import { StoreProvider } from "./store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
-        <ThemeProvider>
-            <App />
-        </ThemeProvider>
+        <StoreProvider>
+            <ThemeProvider>
+                <App />
+            </ThemeProvider>
+        </StoreProvider>
     </React.StrictMode>
 );
 

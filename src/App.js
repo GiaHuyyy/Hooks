@@ -19,6 +19,9 @@ import UseContextt from "./hooks/UseContext";
 // import UseSyncExternalStore from './hooks/UseSyncExternalStore';
 // import UseEvent from './hooks/UseEvent';
 
+// Global State with Context + useReducer
+import StoreApp from "./StoreApp";
+
 // Fake comments
 function emitComment(id) {
     setInterval(() => {
@@ -44,7 +47,9 @@ function App() {
             {/* {<UseCallback />} */}
             {/* {<UseMeMo />} */}
             {/* <UseReducer /> */}
-            <UseContextt />
+            {/* <UseContextt /> */}
+            {<StoreApp />}
+
             {/* <UseImperativeHandle /> */}
             {/* <UseDebugValue /> */}
             {/* <UseTransition /> */}
